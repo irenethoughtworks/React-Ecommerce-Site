@@ -23,23 +23,17 @@ export const Cart = () => {
           }
         })}
       </div>
-
-      {totalAmount > 0 ? (
-        <div className="checkout">
-          <div className="subtotal">
-          <h2>Subtotal: ${totalAmount.toLocaleString()}</h2>
-          </div>
-          <div className="buttons">
-            <button onClick={() => navigate("/")}>Continue Shopping</button>
-            <button onClick={() => {checkout(); navigate("/checkout");}}>
-              Checkout
-            </button>
-          </div>
+      <div className="checkout">
+        <div className="subtotal">
+        <h2>Subtotal: ${totalAmount.toLocaleString()}</h2>
         </div>
-
-      ) : (
-        <h1> Your Shopping Cart is Empty</h1>
-      )}
+        <div className="buttons">
+          <button onClick={() => navigate("/")}>Continue Shopping</button>
+          <button onClick={() => {checkout(); navigate("/checkout");}}>
+            Checkout
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
