@@ -50,20 +50,15 @@ const Button = styled.button`
   }
 `;
 
-export const Contact = () => {
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // implement form submission logic here
-  };
-
+export const Contact = ({ onSubmit }) => {
   return (
     <ContactWrapper>
       <Title>Contact Us</Title>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={onSubmit}>
         <label htmlFor="name">Name:</label>
-        <Input type="text" id="name" name="name" required />
+        <Input role="input" type="text" id="name" name="name" required />
         <label htmlFor="email">Email:</label>
-        <Input type="email" id="email" name="email" required />
+        <Input role="input" type="email" id="email" name="email" required />
         <label htmlFor="message">Message:</label>
         <TextArea id="message" name="message" required></TextArea>
         <Button type="submit">Send</Button>
