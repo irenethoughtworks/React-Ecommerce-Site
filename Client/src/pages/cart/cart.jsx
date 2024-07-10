@@ -4,14 +4,15 @@ import { PRODUCTS } from "../../products";
 import { CartItem } from "./cart-item";
 import { useNavigate } from "react-router-dom";
 import "./cart.css";
+import {EmptyCart} from "./empty-cart";
 
 export const Cart = () => {
   const { cartItems, getTotalCartAmount, checkout } = useContext(ShopContext);
   const totalAmount = getTotalCartAmount();
 
   const navigate = useNavigate();
-
   return (
+      totalAmount !== 0 ? (
     <div className="cart">
       <div>
         <h1>Your Cart Items</h1>
@@ -34,6 +35,8 @@ export const Cart = () => {
           </button>
         </div>
       </div>
-    </div>
+    </div>) : (
+        <EmptyCart/>
+      )
   );
 };
